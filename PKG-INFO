@@ -1,0 +1,82 @@
+Metadata-Version: 1.1
+Name: pyvi
+Version: 0.0.5
+Summary: Python Vietnamese Toolkit
+Home-page: https://github.com/trungtv/pyvi
+Author: Viet-Trung Tran
+Author-email: trungtv@soict.hust.edu.vn
+License: MIT
+Description: Python Vietnamese Toolkit
+        =========================
+        
+        This tool makes it easy to do tokenizing / pos-tagging Vietnamese with Python.
+        
+        Algorithm: Conditional Random Field
+        Vietnamese tokenizer f1_score = 0.978637686
+        Vietnamese pos tagging f1_score = 0.92520656
+        
+        POS TAGS: 
+        A - Adjective
+        C - Coordinating conjunction
+        E - Preposition
+        I - Interjection
+        L - Determiner
+        M - Numeral
+        N - Common noun
+        Nc - Noun Classifier
+        Ny - Noun abbreviation
+        Np - Proper noun
+        Nu - Unit noun
+        P - Pronoun
+        R - Adverb
+        S -  Subordinating conjunction
+        T - Auxiliary, modal words
+        V - Verb
+        X - Unknown
+        F - Filtered out (punctuation)
+        
+        ============
+        Installation
+        ============
+        
+        At the command line with pip
+        
+        .. code-block:: shell
+        
+            $ pip install pyvi
+        
+        **Uninstall**
+        
+        .. code-block:: shell
+        
+            $ pip uninstall pyvi
+        
+        =====
+        Usage
+        =====
+        
+        .. code-block:: python
+        
+            from pyvi.pyvi import ViTokenizer, ViPosTagger
+        
+            ViTokenizer.tokenize(u"Trường đại học bách khoa hà nội")
+        
+            ViPosTagger.postagging(ViTokenizer.tokenize(u"Trường đại học Bách Khoa Hà Nội")
+        
+        
+        
+        
+        
+Keywords: Vietnamese natural language processing
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: Vietnamese
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
