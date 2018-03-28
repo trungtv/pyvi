@@ -23,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.5',
+    version='0.0.8.1',
 
     description='Python Vietnamese Toolkit',
     long_description=long_description,
@@ -59,9 +59,6 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
     ],
 
     # What does your project relate to?
@@ -79,7 +76,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['scikit-learn', 'sklearn-crfsuite'],
+    install_requires=['scikit-learn', 'sklearn-crfsuite',],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
@@ -94,7 +91,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        'pyvi': ['pyvi.pkl', 'pyvipos.pkl', 'words.txt'],
+        'pyvi': ['pyvi.pkl', 'pyvipos.pkl', 'words.txt', 'pyvi3.pkl', 'pyvipos3.pkl'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
