@@ -16,7 +16,7 @@ class ViTokenizer:
     if sys.version_info[0] == 3:
         model_file = 'models/pyvi3.pkl'
 
-    with codecs.open(os.path.join(os.path.dirname(__file__), 'words.txt'), 'r', encoding='utf-8') as fin:
+    with codecs.open(os.path.join(os.path.dirname(__file__), 'models/words.txt'), 'r', encoding='utf-8') as fin:
         for token in fin.read().split('\n'):
             tmp = token.split(' ')
             if len(tmp) == 2:

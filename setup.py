@@ -91,7 +91,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        'pyvi': ['words.txt', 'models/pyvi.pkl', 'models/pyvipos.pkl', 'models/pyvi3.pkl', 'models/pyvipos3.pkl']
+        'pyvi': ['models/words.txt', 'models/pyvi.pkl', 'models/pyvipos.pkl', 'models/pyvi3.pkl', 'models/pyvipos3.pkl']
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
