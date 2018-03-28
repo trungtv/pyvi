@@ -12,9 +12,9 @@ import sys
 class ViTokenizer:
     bi_grams = set()
     tri_grams = set()
-    model_file = 'pyvi.pkl'
+    model_file = 'models/pyvi.pkl'
     if sys.version_info[0] == 3:
-        model_file = 'pyvi3.pkl'
+        model_file = 'models/pyvi3.pkl'
 
     with codecs.open(os.path.join(os.path.dirname(__file__), 'words.txt'), 'r', encoding='utf-8') as fin:
         for token in fin.read().split('\n'):
@@ -130,9 +130,9 @@ class ViPosTagger:
     filtered_tags.add(u'\u201c')
     filtered_tags.add(u'\u2019')
     filtered_tags.add('...')
-    model_file = 'pyvipos.pkl'
+    model_file = 'models/pyvipos.pkl'
     if sys.version_info[0] == 3:
-        model_file = 'pyvipos3.pkl'
+        model_file = 'models/pyvipos3.pkl'
 
     with open(os.path.join(os.path.dirname(__file__), model_file), 'rb') as fin:
         model = pickle.load(fin)
