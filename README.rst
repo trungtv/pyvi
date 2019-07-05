@@ -1,7 +1,9 @@
 Python Vietnamese Toolkit
 =========================
-
-Pyvi performs tokenizing / pos-tagging for Vietnamese in Python.  
+Functionality
+- Tokenize
+- POS tag
+- Remove accents
 
 Algorithm: Conditional Random Field
 
@@ -58,6 +60,7 @@ Usage
 
     ViPosTagger.postagging(ViTokenizer.tokenize(u"Trường đại học Bách Khoa Hà Nội")
 
-
+    from pyvi import ViUtils
+    ViUtils.remove_accents(u"Trường đại học bách khoa hà nội")
 
 
