@@ -1,9 +1,14 @@
 Python Vietnamese Toolkit
 =========================
 Functionality
+-------
+
 - Tokenize
+
 - POS tag
+
 - Remove accents
+
 
 Algorithm: Conditional Random Field
 
