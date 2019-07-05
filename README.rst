@@ -1,7 +1,7 @@
 Python Vietnamese Toolkit
 =========================
 Functionality
--------
+=============
 
 - Tokenize
 
