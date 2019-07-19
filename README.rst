@@ -9,6 +9,9 @@ Functionality
 
 - Remove accents
 
+- Add accents
+
+
 
 Algorithm: Conditional Random Field
 
@@ -16,7 +19,8 @@ Vietnamese tokenizer f1_score = 0.978637686
 
 Vietnamese pos tagging f1_score = 0.92520656
 
-POS TAGS: 
+
+POS TAGS:
 
 - A - Adjective
 - C - Coordinating conjunction
@@ -67,5 +71,8 @@ Usage
 
     from pyvi import ViUtils
     ViUtils.remove_accents(u"Trường đại học bách khoa hà nội")
+
+    from pyvi import ViDiac
+    ViDiac.doit(u'truong dai hoc bach khoa ha noi')
 
 
