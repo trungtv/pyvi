@@ -12,7 +12,6 @@ Functionality
 - Add accents
 
 
-
 Algorithm: Conditional Random Field
 
 Vietnamese tokenizer f1_score = 0.978637686
