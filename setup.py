@@ -23,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.9.6',
+    version='0.0.9.7',
 
     description='Python Vietnamese Toolkit',
     long_description=long_description,
@@ -91,7 +91,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        'pyvi': ['models/words.txt', 'models/pyvi.pkl', 'models/pyvipos.pkl', 'models/pyvi3.pkl', 'models/pyvipos3.pkl']
+        'pyvi': ['models/words.txt', 'models/pyvi.pkl', 'models/pyvipos.pkl', 'models/pyvi3.pkl', 'models/pyvipos3.pkl', 'models/vidiac.crfsuite']
     },
 
     # Although 'package_data' is the preferred approach, in some case you may

@@ -4,6 +4,7 @@ import pickle
 from sklearn_crfsuite import CRF
 import gc
 import sys
+import os 
 gc.collect()
 
 class ViDiac:
@@ -111,7 +112,7 @@ class ViDiac:
             reversed_mapping[telex[i]] = unichr(maAciiTexlex[i])
     reversed_mapping
 
-    crf = CRF(model_filename='models/vidiac.crfsuite')
+    crf = CRF(model_filename=os.path.join(os.path.dirname(__file__), 'models/vidiac.crfsuite'))
     data = pickle.dumps(crf, protocol=pickle.HIGHEST_PROTOCOL)
     model = pickle.loads(data)
 
@@ -197,3 +198,6 @@ class ViDiac:
                 # print unichar
                 output += ViDiac.reversed_mapping[unichar]
         return output
+
+def add_accents(s):
+    return ViDiac.doit(s)

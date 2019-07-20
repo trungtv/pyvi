@@ -1,6 +1,7 @@
 import sys
 import re
 import unicodedata
+from pyvi import ViDiac
 
 python_version = sys.version_info[0]
 
@@ -16,3 +17,6 @@ def remove_accents(s):
         return unicodedata.normalize('NFKD', unicode(s)).encode('ASCII', 'ignore')
     else:
         return unicodedata.normalize('NFKD', s).encode('ASCII', 'ignore')
+
+def add_accents(s):
+    return ViDiac.add_accents(s)
