@@ -135,6 +135,7 @@ class ViTokenizer:
         labels = ViTokenizer.model.predict([ViTokenizer.sent2features(tmp, False)])
         token = tmp[0]
         tokens = []
+        spaces = []
         for i in range(1, len(labels[0])):
             if labels[0][i] == 'I_W' and tmp[i] not in string.punctuation and\
                             tmp[i-1] not in string.punctuation and\
@@ -145,7 +146,20 @@ class ViTokenizer:
                 tokens.append(token)
                 token = tmp[i]
         tokens.append(token)
-        return tokens, [True]*len(tokens)
+        tmp = re.sub("\s\s+" , " ", str)
+#        print(tmp)
+        i = 0
+        for token in tokens:
+            i = i + len(token)
+            
+#            print("{}:{}:{}".format(token,tmp[i], i))
+            if i < len(tmp) and tmp[i] == ' ':
+                spaces.append(True)
+                i += 1
+            else:
+                spaces.append(False)
+               
+        return tokens, spaces#[True]*len(tokens)
 
 
 def spacy_tokenize(str):
