@@ -108,11 +108,11 @@ class ViTokenizer:
             patterns = patterns.decode('utf-8')
         tokens = re.findall(patterns, text, re.UNICODE)
 
-        return [token[0] for token in tokens]
+        return text, [token[0] for token in tokens]
 
     @staticmethod
     def tokenize(str):
-        tmp = ViTokenizer.sylabelize(str)
+        text, tmp = ViTokenizer.sylabelize(str)
         if len(tmp) == 0:
             return str
         labels = ViTokenizer.model.predict([ViTokenizer.sent2features(tmp, False)])
@@ -129,7 +129,7 @@ class ViTokenizer:
 
     @staticmethod
     def spacy_tokenize(str):
-        tmp = ViTokenizer.sylabelize(str)
+        text, tmp = ViTokenizer.sylabelize(str)
         if len(tmp) == 0:
             return str
         labels = ViTokenizer.model.predict([ViTokenizer.sent2features(tmp, False)])
@@ -146,14 +146,14 @@ class ViTokenizer:
                 tokens.append(token)
                 token = tmp[i]
         tokens.append(token)
-        tmp = re.sub("\s\s+" , " ", str)
+        text = re.sub("\s\s+" , " ", text)
 #        print(tmp)
         i = 0
         for token in tokens:
             i = i + len(token)
             
-#            print("{}:{}:{}".format(token,tmp[i], i))
-            if i < len(tmp) and tmp[i] == ' ':
+#            print("{}:{}:{}".format(token,text[i], i))
+            if i < len(text) and text[i] == ' ':
                 spaces.append(True)
                 i += 1
             else:
