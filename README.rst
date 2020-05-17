@@ -14,9 +14,9 @@ Functionality
 
 Algorithm: Conditional Random Field
 
-Vietnamese tokenizer f1_score = 0.978637686
+Vietnamese tokenizer f1_score = 0.985
 
-Vietnamese pos tagging f1_score = 0.92520656
+Vietnamese pos tagging f1_score = 0.925
 
 
 POS TAGS:
