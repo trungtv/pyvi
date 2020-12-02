@@ -131,7 +131,7 @@ class ViTokenizer:
     def spacy_tokenize(str):
         text, tmp = ViTokenizer.sylabelize(str)
         if len(tmp) == 0:
-            return str
+            return [], []
         labels = ViTokenizer.model.predict([ViTokenizer.sent2features(tmp, False)])
         token = tmp[0]
         tokens = []
