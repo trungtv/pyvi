@@ -1,15 +1,23 @@
 Python Vietnamese Toolkit
 =========================
+What's New (0.1)
+=============
+- Retrain a new tokenization model on a much bigger dataset. F1 score =0.985
+
+- Add training data and training code
+
+- Better integration to spacy.io (removing redundant spaces between tokens after tokenization. Eg. Việt Nam , 12 / 22 / 2020 => Việt Nam, 12/22/2020]
+
 Functionality
 =============
 
-- Tokenize
+- Tokenization
 
-- POS tag
+- POS tagging
 
-- Remove accents
+- Accents removal
 
-- Add accents
+- Accents adding
 
 
 Algorithm: Conditional Random Field
