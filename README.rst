@@ -1,7 +1,7 @@
 Python Vietnamese Toolkit
 =========================
 What's New (0.1)
-=============
+================
 - Retrain a new tokenization model on a much bigger dataset. F1 score =0.985
 
 - Add training data and training code
