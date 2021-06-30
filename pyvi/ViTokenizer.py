@@ -78,7 +78,7 @@ class ViTokenizer:
     def sylabelize(text):
         text = ud.normalize('NFC', text)
 
-        specials = ["==>", "->", "\.\.\.", ">>"]
+        specials = ["==>", "->", "\.\.\.", ">>",'\n']
         digit = "\d+([\.,_]\d+)+"
         email = "([a-zA-Z0-9_.+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+)"
         #web = "^(http[s]?://)?(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$"
@@ -146,7 +146,7 @@ class ViTokenizer:
                 tokens.append(token)
                 token = tmp[i]
         tokens.append(token)
-        text = re.sub("\s\s+" , " ", text)
+#        text = re.sub("\s\s+" , " ", text)
 #        print(tmp)
         i = 0
         for token in tokens:
