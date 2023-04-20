@@ -169,27 +169,27 @@ class ViDiac:
 
     @staticmethod
     def doit(str_sentence):
-        list_char = list(str_sentence.lower())
-        labels = ViDiac.model.predict([ViDiac.sent2features(list_char)])
+        str_sentence_lower = str_sentence.lower()
+        labels = ViDiac.model.predict([ViDiac.sent2features(str_sentence_lower)])[0]
         output = u''
-        for i in range(len(list_char)):
-            if labels[0][i] == 'L':
-                output += list_char[i]
-            elif labels[0][i] == 'U':
-                output += list_char[i].upper()
+        for char, label in zip(str_sentence_lower, labels):
+            if label == 'L':
+                output += char
+            elif label == 'U':
+                output += char.upper()
             else:
-                upcase = False
-                unichar = list_char[i]
-                for label in labels[0][i]:
-                    if label == 'U':
-                        upcase = True
-                    elif label == 'L':
+                uppercase = False
+                unichar = char
+                for c in label:
+                    if c == 'U':
+                        uppercase = True
+                    elif c == 'L':
                         continue
-                    elif label == 'm':
+                    elif c == 'm':
                         unichar += unichar
                     else:
-                        unichar += label
-                if upcase:
+                        unichar += c
+                if uppercase:
                     unichar = unichar.upper()
                 output += ViDiac.reversed_mapping.get(unichar, unichar[0])
         return output
