@@ -171,17 +171,13 @@ class ViDiac:
     def doit(str_sentence):
         list_char = list(str_sentence.lower())
         labels = ViDiac.model.predict([ViDiac.sent2features(list_char)])
-        # output = tmp[0]
-        # print labels[0]
         output = u''
         for i in range(len(list_char)):
-            # print list_char[i], labels[0][i]
             if labels[0][i] == 'L':
                 output += list_char[i]
             elif labels[0][i] == 'U':
                 output += list_char[i].upper()
             else:
-                # print "label_{}".format(labels[0][i])
                 upcase = False
                 unichar = list_char[i]
                 for label in labels[0][i]:
@@ -195,8 +191,7 @@ class ViDiac:
                         unichar += label
                 if upcase:
                     unichar = unichar.upper()
-                # print unichar
-                output += ViDiac.reversed_mapping[unichar]
+                output += ViDiac.reversed_mapping.get(unichar, unichar[0])
         return output
 
 def add_accents(s):
